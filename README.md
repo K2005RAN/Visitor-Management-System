@@ -30,5 +30,3 @@ If you want to run or develop this project locally on your machine, follow these
 ```bash
 git clone [https://github.com/K2005RAN/Visitor_Pass_System.git](https://github.com/K2005RAN/Visitor_Pass_System.git)
 cd Visitor_Pass_System
-##  FronEnd Output  
-<img width="940" height="443" alt="image" src="https://github.com/user-attachments/assets/3bad5d3c-9f07-4b1c-9808-e9ae7074c0e5" />
