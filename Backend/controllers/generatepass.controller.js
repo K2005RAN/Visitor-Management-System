@@ -10,8 +10,8 @@ const transporter = nodemailer.createTransport({
     port: 587,                   // 👈 Standard secure port for corporate webmail
     secure: false,               // 👈 Must be false for port 587 (uses STARTTLS)
     auth: {
-        user: "security.desk@mycem.in", 
-        pass: "Welcome2026@" // 👈 Paste your webmail password or app password here
+        user: "Give mail id ", 
+        pass: "password" // 👈 Paste your webmail password or app password here
     },
     tls: {
         rejectUnauthorized: false // 🛡️ Prevents corporate firewalls from blocking the connection
@@ -140,7 +140,7 @@ export const generateVisitorPass = tryCatch(async (req, res) => {
         // -----------------------------------------------------------------
         if (recipientEmail && recipientEmail.trim() !== "") {
             const mailOptions = {
-                from: `"HeidelbergCement Security Desk" <security.desk@mycem.in>`,
+                from: `"HeidelbergCement Security Desk" <Mail>`,
                 to: recipientEmail.trim(), 
                 subject: `🔔 Visitor Arrived: ${data.name}`,
                 html: `
@@ -195,10 +195,10 @@ export const generateVisitorPass = tryCatch(async (req, res) => {
         // -----------------------------------------------------------------
         // 🛡️ FORMAT 2: Clean, Corporate Compliance Log for Security Manager
         // -----------------------------------------------------------------
-        const securityManagerEmail = "ramakant.mishra@heidelbergcement.in"; 
+        const securityManagerEmail = "manager mail"; 
 
         const managerMailOptions = {
-            from: `"HeidelbergCement Security Desk" <security.desk@mycem.in>`,
+            from: `"HeidelbergCement Security Desk" <mail>`,
             to: securityManagerEmail,
             subject: `🛡️ Security Log: Pass ${generatedPassId} Active`,
             html: `
