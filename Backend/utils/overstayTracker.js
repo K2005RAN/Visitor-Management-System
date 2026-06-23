@@ -9,8 +9,8 @@ const transporter = nodemailer.createTransport({
     port: 587,                   
     secure: false,               
     auth: {
-        user: "security.desk@mycem.in", // 🟢 Live Office Desk Email Address
-        pass: "Welcome2026@"           // 🟢 Your standard raw webmail login password 
+        user: "mail", // 🟢 Live Office Desk Email Address
+        pass: "password"           // 🟢 Your standard raw webmail login password 
     },
     tls: {
         rejectUnauthorized: false 
@@ -21,12 +21,11 @@ const transporter = nodemailer.createTransport({
 });
 
 // 🏢 Live target inbox address for the plant's Security Manager
-const securityManagerEmail = "ramakant.mishra@heidelbergcement.in";
+const securityManagerEmail = "security manager mail";
 
 // 🏢 Executive Distribution List for End-of-Day Reports
 const executiveDistributionList = [
-    "lekhraj.sharma@heidelbergcement.in",
-    "babuprakash.dwivedi@heidelbergcement.in"
+   // list of mail ids
 ];
 
 /**
@@ -131,7 +130,7 @@ export const initializeOverstayTracker = () => {
 
                 const tableRows = await generateVisitorTableRows(remainingVisitors, db);
                 await transporter.sendMail({
-                    from: `"HeidelbergCement Security Desk" <security.desk@mycem.in>`,
+                    from: `"HeidelbergCement Security Desk" <mail>`,
                     to: securityManagerEmail,
                     subject: `⚠️ HeidelbergCement Campus Visitor Clearance Status: ${remainingVisitors.length} Active Pass(es)`,
                     html: `<div>...</div>`
